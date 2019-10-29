@@ -211,18 +211,18 @@ rabbitmqLDAPPlugin:
 ## MQTT Plugin
 ## Ref: http://www.rabbitmq.com/mqtt.html
 rabbitmqMQTTPlugin:
-  enabled: false
+  enabled: true
 
   ## MQTT configuration:
   config: |
     # mqtt.default_user     = guest
     # mqtt.default_pass     = guest
-    # mqtt.allow_anonymous  = true
+    mqtt.allow_anonymous  = false
 
 ## Web MQTT Plugin
 ## Ref: http://www.rabbitmq.com/web-mqtt.html
 rabbitmqWebMQTTPlugin:
-  enabled: false
+  enabled: true
 
   ## Web MQTT configuration:
   config: |
@@ -256,7 +256,7 @@ rabbitmqWebSTOMPPlugin:
 ## Prometheus Plugin
 ## Ref: https://www.rabbitmq.com/prometheus.html
 rabbitmqPrometheusPlugin:
-  enabled: false
+  enabled: true
 
   ## NodePort
   nodePort: null

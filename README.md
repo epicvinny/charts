@@ -2,9 +2,13 @@
 
 CHANGE LOG:
 
-**Add Istio Support***
+**Add Istio Support**
 - Services are named according istio requirements
 - Add version tag for workloads
+
+**TODO**
+
+- Add rancher questions support
 
 ## Where to find us
 

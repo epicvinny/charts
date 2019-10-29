@@ -3,7 +3,7 @@
 CHANGE LOG:
 
 **Add Istio Support***
-- Services are named according istio requeriments
+- Services are named according istio requirements
 - Add version tag for workloads
 
 ## Where to find us

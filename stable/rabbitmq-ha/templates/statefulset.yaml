@@ -8,6 +8,7 @@ metadata:
     chart: {{ template "rabbitmq-ha.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
+    version: {{ .Values.appVersion }}
 {{- if .Values.extraLabels }}
 {{ toYaml .Values.extraLabels | indent 4 }}
 {{- end }}
@@ -26,6 +27,7 @@ spec:
       labels:
         app: {{ template "rabbitmq-ha.name" . }}
         release: {{ .Release.Name }}
+        version: {{ .Values.appVersion }}
 {{- if .Values.extraLabels }}
 {{ toYaml .Values.extraLabels | indent 8 }}
 {{- end }}

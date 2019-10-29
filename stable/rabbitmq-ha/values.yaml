@@ -1,3 +1,8 @@
+## Support for Istio - Requirements for services and pods
+## Ref: https://istio.io/docs/setup/additional-setup/requirements/
+## version tag on stateful set and pods
+appVersion: v1
+
 ## RabbitMQ application credentials
 ## Ref: http://rabbitmq.com/access-control.html
 ##

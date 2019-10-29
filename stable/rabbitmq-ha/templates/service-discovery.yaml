@@ -15,55 +15,55 @@ metadata:
 spec:
   clusterIP: None
   ports:
-    - name: http
+    - name: http-dash
       protocol: TCP
       port: {{ .Values.rabbitmqManagerPort }}
-      targetPort: http
-    - name: amqp
+      targetPort: http-dash
+    - name: tcp-amqp
       protocol: TCP
       port: {{ .Values.rabbitmqNodePort }}
-      targetPort: amqp
-    - name: epmd
+      targetPort: tcp-amqp
+    - name: tcp-epmd
       protocol: TCP
       port: {{ .Values.rabbitmqEpmdPort }}
-      targetPort: epmd
+      targetPort: tcp-epmd
     {{- if .Values.rabbitmqSTOMPPlugin.enabled }}
-    - name: stomp-tcp
+    - name: tcp-stomp
       protocol: TCP
       port: 61613
-      targetPort: stomp-tcp
-    - name: stomp-ssl
+      targetPort: tcp-stomp
+    - name: tcp-stomp-ssl
       protocol: TCP
       port: 61614
-      targetPort: stomp-ssl
+      targetPort: tcp-stomp-ssl
     {{- end }}
     {{- if .Values.rabbitmqWebSTOMPPlugin.enabled }}
-    - name: stomp-ws
+    - name: http-stomp-ws
       protocol: TCP
       port: 15674
-      targetPort: stomp-ws
+      targetPort: http-stomp-ws
     {{- end }}
     {{- if .Values.rabbitmqMQTTPlugin.enabled }}
-    - name: mqtt-tcp
+    - name: tcp-mqtt
       protocol: TCP
       port: 1883
-      targetPort: mqtt-tcp
-    - name: mqtt-ssl
+      targetPort: tcp-mqtt
+    - name: tcp-mqtt-ssl
       protocol: TCP
       port: 8883
-      targetPort: mqtt-ssl
+      targetPort: tcp-mqtt-ssl
     {{- end }}
     {{- if .Values.rabbitmqWebMQTTPlugin.enabled }}
-    - name: mqtt-ws
+    - name: http-mqtt-ws
       protocol: TCP
       port: 15675
-      targetPort: mqtt-ws
+      targetPort: http-mqtt-ws
     {{- end }}
     {{- if .Values.rabbitmqAmqpsSupport.enabled }}
-    - name: amqps
+    - name: tcp-amqps
       protocol: TCP
       port: {{ .Values.rabbitmqAmqpsSupport.amqpsNodePort }}
-      targetPort: amqps
+      targetPort: tcp-amqps
     {{- end }}
   publishNotReadyAddresses: true
   selector:
